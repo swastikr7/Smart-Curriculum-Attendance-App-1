@@ -126,41 +126,42 @@ body {
 
 /* Dashboard Container */
 .dashboard-container {
-    padding: 30px;
+    padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
-    max-width: 1400px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 /* Cards */
 .card {
     background: white;
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 
 .card h3 {
     color: #333;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
     border-bottom: 2px solid #f0f0f0;
+    font-size: 18px;
 }
 
 /* Schedule List */
 .schedule-item {
     background: #f8f9fa;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
-    border-left: 4px solid #667eea;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
     transition: all 0.3s;
 }
 
@@ -187,14 +188,14 @@ body {
 }
 
 .subject {
-    font-size: 18px;
+    font-size: 14px;
     color: #333;
 }
 
 .room {
     color: #666;
-    font-size: 14px;
-    margin-top: 5px;
+    font-size: 12px;
+    margin-top: 3px;
 }
 
 /* QR Scanner */
@@ -245,9 +246,9 @@ body {
 /* Activity Suggestions */
 .activity-item {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -388,18 +389,53 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .dashboard-container {
-        grid-template-columns: 1fr;
         padding: 15px;
+        grid-template-columns: 1fr;
     }
     
     .navbar {
-        padding: 15px 20px;
+        padding: 15px;
     }
     
     .navbar h2 {
-        font-size: 1.2em;
+        font-size: 20px;
     }
-    
+}
+
+/* QR Scanner Animations */
+@keyframes scan {
+    0% { top: 0; }
+    50% { top: calc(100% - 2px); }
+    100% { top: 0; }
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.3; }
+}
+
+/* Notification Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
     .login-container h1 {
         font-size: 2em;
     }
